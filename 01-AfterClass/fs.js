@@ -1,0 +1,22 @@
+const fs=require('fs');
+
+let texto=`Zoncera N°2:
+A) Zonceras sobre el espacio
+"El mal que aqueja a la Argentina es la extensión"
+
+    Fue también Sarmiento quien enunció esta zoncera que está en el primer capítulo de Facundo. Veremos,
+al considerarla, que ella estaba vigente, como Civilización y barbarie, antes que Sarmiento le diera
+forma literaria, pues ya regía el pensamiento de directoriales y unitarios. Es que Sarmiento tenía más
+talento que los otros y supo sintetizar en "principios" el sistema mental de los anteriores unitarios de 
+los que lo separaban sólo estilos y modales, cosa que él mismo destacó talentosamente en su descripción
+del unitario clásico. Difería de ellos, más que en el fondo, en eso de ser a "la que te criaste", a pesar
+de doña Paula, que lo quiso sacar modosito, y de él mismo, en cuanto se propuso -ya lo veremos- como niño
+modelo.
+
+
+Arturo Jauretche`
+fs.writeFileSync('./files/prueba1.txt',texto);
+
+if (fs.existsSync('./files/prueba1.txt')){
+    console.log(fs.readFileSync('./files/prueba1.txt','utf-8'));
+}

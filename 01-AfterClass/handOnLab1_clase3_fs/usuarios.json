@@ -1,0 +1,30 @@
+[
+     {
+          "nombre": "Mario",
+          "username": "Santos",
+          "apellido": "Santos",
+          "edad": 58,
+          "id": 3
+     },
+     {
+          "nombre": "Pablo",
+          "username": "Lampone",
+          "apellido": "Lampone",
+          "edad": 58,
+          "id": 4
+     },
+     {
+          "nombre": "Gabriel",
+          "username": "Medina",
+          "apellido": "Medina",
+          "edad": 58,
+          "id": 5
+     },
+     {
+          "nombre": "Emilio",
+          "username": "Cosetti",
+          "apellido": "Ravena",
+          "edad": 58,
+          "id": 6
+     }
+]

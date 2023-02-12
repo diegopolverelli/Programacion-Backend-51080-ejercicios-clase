@@ -1,0 +1,57 @@
+[
+     {
+          "nombre": "Clase 3",
+          "lugar": "Virtual",
+          "precio": 115,
+          "capacidad": 50,
+          "fecha": "28/1/2023",
+          "participantes": [
+               "Diego",
+               "Laura",
+               "Macarena"
+          ],
+          "id": 1
+     },
+     {
+          "nombre": "Clase 4",
+          "lugar": "Virtual",
+          "precio": 115,
+          "capacidad": 50,
+          "fecha": "4/2/2023",
+          "participantes": [
+               "Diego",
+               "Florencia"
+          ],
+          "id": 2
+     },
+     {
+          "nombre": "Repaso...",
+          "lugar": "Virtual",
+          "precio": 115,
+          "capacidad": 50,
+          "fecha": "8/2/2023",
+          "participantes": [],
+          "id": 3
+     },
+     {
+          "nombre": "AfterClass",
+          "lugar": "Virtual-desde nuevoEvento2",
+          "precio": 200,
+          "capacidad": 40,
+          "fecha": "8/2/2023",
+          "participantes": [
+               "Florencia",
+               "Rafael"
+          ],
+          "id": 4
+     },
+     {
+          "nombre": "Clase 4",
+          "lugar": "también en remoto...",
+          "precio": 115,
+          "capacidad": 50,
+          "fecha": "5/2/2023",
+          "participantes": [],
+          "id": 5
+     }
+]

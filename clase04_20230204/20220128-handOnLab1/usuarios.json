@@ -1,0 +1,38 @@
+[
+     {
+          "nombre": "Diego",
+          "username": "diego001",
+          "apellido": "Polverelli",
+          "edad": 44,
+          "id": 1
+     },
+     {
+          "nombre": "Diego",
+          "username": "Cosetti",
+          "apellido": "Peretti",
+          "edad": 61,
+          "id": 2
+     },
+     {
+          "nombre": "Mario",
+          "username": "Santos",
+          "apellido": "Santos",
+          "edad": 58,
+          "id": 3
+     },
+     {
+          "nombre": "Pablo",
+          "username": "Lampone",
+          "apellido": "Lampone",
+          "edad": 58,
+          "id": 4
+     },
+     {
+          "nombre": "Gabriel",
+          "username": "Medina",
+          "apellido": "Medina",
+          "password": "954bba9a51fcf164f10a23b22224040b5f4b946866f45c1ae457dc95f27d409f",
+          "edad": 58,
+          "id": 5
+     }
+]

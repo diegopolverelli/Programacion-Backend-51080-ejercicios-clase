@@ -1,0 +1,23 @@
+[
+     {
+          "nombre": "Diego",
+          "username": "diego001",
+          "apellido": "Polverelli",
+          "edad": 44,
+          "id": 1
+     },
+     {
+          "nombre": "Diego",
+          "username": "Cosetti",
+          "apellido": "Peretti",
+          "edad": 61,
+          "id": 2
+     },
+     {
+          "nombre": "Mario",
+          "username": "Santos",
+          "apellido": "Santos",
+          "edad": 58,
+          "id": 3
+     }
+]

@@ -1,0 +1,29 @@
+Enlases varios, presentación del curso:
+https://plataforma.coderhouse.com/class-experience?vid=conduct   Dudas OnBoarding
+https://www.youtube.com/watch?v=sNVjfMLofSg    Código de Conducta
+https://forms.gle/srNuKoWFdcHXKamLA   presentacion
+
+
+Enlaces API's para prueba:
+https://developer.marvel.com/docs	(requiere registrarse y descargar un API Key; luego generar un hash. Ver documentación)
+https://api-ninjas.com/api/trivia   (requiere registrarse y descargar un API Key)
+https://worldtimeapi.org/pages/examples
+https://reqres.in/
+
+
+
+Enlace a sitio donde se puede comprobar compatibilidad de navegadores con herramientas nuevas de ECMAScript:
+https://caniuse.com/?search=classes
+https://caniuse.com/mdn-javascript_classes_private_class_fields
+
+
+
+Para los que están flojos en JavaScript, les dejo links a 2 sitios de referencia que pueden utilizar para repasar
+conceptos:
+https://developer.mozilla.org/es/docs/Web/JavaScript
+https://www.w3schools.com/js/default.asp
+
+
+
+
+

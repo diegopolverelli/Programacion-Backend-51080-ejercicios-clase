@@ -1,0 +1,29 @@
+[
+     {
+          "nombre": "Concierto Divididos",
+          "lugar": "Movistar Arena",
+          "precio": 6900,
+          "capacidad": 50000,
+          "fecha": "27/2/2023",
+          "participantes": [],
+          "id": 1
+     },
+     {
+          "nombre": "Concierto Los Autenticos Decadentes",
+          "lugar": "Estadio Malvinas Argentinas",
+          "precio": 4830,
+          "capacidad": 10000,
+          "fecha": "15/3/2023",
+          "participantes": [],
+          "id": 2
+     },
+     {
+          "nombre": "Concierto Los Autenticos Decadentes",
+          "lugar": "Estadio Velez Sarfield",
+          "precio": 4830,
+          "capacidad": 10000,
+          "fecha": "5/2/2023",
+          "participantes": [],
+          "id": 3
+     }
+]
