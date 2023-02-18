@@ -1,0 +1,216 @@
+<link rel="shortcut icon" href="#">
+
+    let alumnos=[
+        {
+            nombre:"Maria",
+            apellido:"Gutierrez",
+            domicilio:"Peru 2727, CABA",
+            edad:18,
+            email: 'mgutierrez2000@hotmail.com'
+        },
+        {
+            nombre:"José",
+            apellido:"Swartsman",
+            domicilio:"Ayacucho 1814, CABA",
+            edad:32,
+            email: 'JoseAbelS@gmail.com'
+        },
+        {
+            nombre:"Miguel Angel",
+            apellido:"Lopez",
+            domicilio:"Av. 9 de Julio 872, 1°C, CABA",
+            edad:22,
+            email:'lopecitobombon@yahoo.es'
+        },
+        {
+            nombre:"Diego",
+            apellido:"Polverelli",
+            domicilio:"Alvear 978, Ituzaingo",
+            edad:44,
+            email:'diegopolverelli@hotmail.com'
+        },
+        {
+            nombre:"Luca",
+            apellido:"Martinez",
+            domicilio:"Alvear 1415, Ituzaingo",
+            edad:18,
+            email:'quemirabobo@hotmail.com'
+        },
+
+    ]
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+Swal.fire({
+    title:"Identifiquese",
+    input:"text",
+    text:"Ingrese su nickname",
+    inputValidator: (value)=>{
+        return !value && "Debe ingresar un nombre...!!!"
+    },
+    allowOutsideClick:false
+}).then(resultado=>{
+    
+});
+
+
+Swal.fire({
+    text:"",
+    toast:true,
+    position:"top-right"
+})
+
+
+
+
+    client.on('user image',(image)=>{
+        io.sockets.emit('addimage','Imagen Compartida', image)
+    });
+
+
+
+
+
+
+console.log('hola...!!!');
+
+
+let miNombre="";
+
+Swal.fire({
+    title:'Identificate',
+    input:"text",
+    text:"Ingrese su nombre",
+    inputValidator: (value)=>{
+        return !value && "Necesitas escribir un nombre para continuar"
+    },
+    allowOutsideClick:false
+}).then(resp=>{
+    miNombre=resp.value;
+    
+    // console.log(miNombre)
+    let socket=io('http://localhost:3000');
+    
+    socket.on("connect",()=>{
+        console.log("Conectado");
+    })
+    
+    socket.on('hello',(nombre, mensaje, mensajes)=>{
+        console.log(`${nombre} dice ${mensaje}`)
+        divMensajes.innerHTML+=`<br><div class='mensaje'><strong>${nombre}</strong> dice ${mensaje}</div>`
+
+        mensajes.forEach(mensaje=>{
+            divMensajes.innerHTML+=`<br><div class='mensaje'><strong>${mensaje.nombre}</strong> dice ${mensaje.mensaje}</div>`
+        })
+
+        socket.emit('presentacion',miNombre)
+    })
+    
+    socket.on('alguienSeConecto',(dato)=>{
+        console.log(`${dato} se ha conectado al chat`);
+        Swal.fire({
+            text:`${dato} se ha conectado al chat`,
+            toast:true,
+            position:"top-right"
+        })
+        divMensajes.innerHTML+=`<br><div class='mensaje'><strong>${dato}</strong> se ha conectado del chat</div>`
+
+    })
+    
+    socket.on('alguienSeDesconecto',(dato)=>{
+        console.log(`${dato} se ha desconectado del chat`);
+        Swal.fire({
+            text:`${dato} se ha desconectado al chat`,
+            toast:true,
+            position:"top-right"
+        })
+        divMensajes.innerHTML+=`<br><div class='mensaje'><strong>${dato}</strong> se desconecto del chat</div>`
+
+    })
+
+    socket.on('nuevoMensaje',(nombre, mensaje)=>{
+        console.log(`${nombre} dijo '${mensaje}'`);
+        divMensajes.innerHTML+=`<br><div class='mensaje'><strong>${nombre}</strong> dice ${mensaje}</div>`
+    })
+
+    let inputNombre=document.querySelector("input[name='nombre']");
+    let inputMensaje=document.querySelector("input[name='mensaje']");
+    let imagen=document.querySelector("input[name='imagen']");
+
+    let btnEnviar=document.querySelector("input[name='enviar']");
+    let divMensajes=document.querySelector("#mensajes");
+
+    inputNombre.value=miNombre;
+    inputNombre.disabled=true;
+
+    btnEnviar.addEventListener("click",()=>{
+        // inputNombre.value="hola";
+        // inputMensaje.value="chau"
+        // divMensajes.innerHTML="PRUEBA"
+
+        socket.emit('mensaje',miNombre,inputMensaje.value)
+        inputMensaje.value="";
+        inputMensaje.focus();
+
+    })
+
+    inputMensaje.addEventListener("keydown",(e)=>{
+        // console.log(e.keyCode)
+        if (e.keyCode==13){
+            btnEnviar.focus();
+        }
+    })
+
+
+    socket.on('addimage',function(mensaje, imagen){
+        let html=`<br>
+<p>${mensaje}</p>
+<img src="${imagen}"></img>
+<br>`
+        divMensajes.innerHTML+=html;
+        divMensajes.scrollTop=divMensajes.scrollHeight;
+        console.log("recién subió el scroll???")
+    })
+
+    imagen.addEventListener('change',(e)=>{
+        console.log(e.target.value)
+        let file=e.target.files[0];
+        console.log(file);
+        let reader=new FileReader();
+        reader.onload=function(evt){
+            socket.emit('user image',evt.target.result);
+        }
+        reader.readAsDataURL(file);
+    })
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+console.log(params)
+
+// console.log(urlSearchParams)
+if(params.nombre){
+    let divAviso=document.querySelector('#aviso');
+    divAviso.innerHTML=`Se ha creado correctamente la mascota ${params.nombre}`
+}
+
+const params1 = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  let nombre = params1.nombre; // "some_value"
+  console.log(nombre)

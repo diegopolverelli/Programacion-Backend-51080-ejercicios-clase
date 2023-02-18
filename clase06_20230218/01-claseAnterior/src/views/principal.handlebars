@@ -1,0 +1,23 @@
+
+<h1>Home Page: {{titulo}}</h1>
+<h2>Mi nombre es {{nombre}}</h2>
+
+<hr>
+
+
+{{#if muestraTemas}}
+    <ul>
+        {{#each temas}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
+
+{{else}}
+    <h3>Consulte por el plan de estudios</h3>
+{{/if}}
+
+<hr>
+<h3>Nombre: {{nombreAl}}</h3>
+<h4>email: <strong>{{emailAl}}</strong></h4>
