@@ -1,0 +1,175 @@
+<link rel="shortcut icon" href="#">
+
+    let alumnos=[
+        {
+            nombre:"Maria",
+            apellido:"Gutierrez",
+            domicilio:"Peru 2727, CABA",
+            edad:18,
+            email: 'mgutierrez2000@hotmail.com'
+        },
+        {
+            nombre:"José",
+            apellido:"Swartsman",
+            domicilio:"Ayacucho 1814, CABA",
+            edad:32,
+            email: 'JoseAbelS@gmail.com'
+        },
+        {
+            nombre:"Miguel Angel",
+            apellido:"Lopez",
+            domicilio:"Av. 9 de Julio 872, 1°C, CABA",
+            edad:22,
+            email:'lopecitobombon@yahoo.es'
+        },
+        {
+            nombre:"Diego",
+            apellido:"Polverelli",
+            domicilio:"Alvear 978, Ituzaingo",
+            edad:44,
+            email:'diegopolverelli@hotmail.com'
+        },
+        {
+            nombre:"Luca",
+            apellido:"Martinez",
+            domicilio:"Alvear 1415, Ituzaingo",
+            edad:18,
+            email:'quemirabobo@hotmail.com'
+        },
+
+    ]
+
+
+*******************************
+SweetAlert2:
+*******************************
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+Swal.fire({
+    title:"Identifiquese",
+    input:"text",
+    text:"Ingrese su nickname",
+    inputValidator: (value)=>{
+        return !value && "Debe ingresar un nombre...!!!"
+    },
+    allowOutsideClick:false
+}).then(resultado=>{
+    
+});
+
+
+Swal.fire({
+    text:"",
+    toast:true,
+    position:"top-right"
+})
+
+*******************************
+*******************************
+
+
+************************************
+Envío de imagenes por chat:
+************************************
+
+Server: 
+    client.on('user image',(image)=>{
+        io.sockets.emit('addimage','Imagen Compartida', image)
+    });
+
+
+view:
+    <input type="file" name="imagen">
+
+
+
+Client:
+    let imagen=document.querySelector("input[name='imagen']");
+
+
+    socket.on('addimage',function(mensaje, imagen){
+        let html=`<br>
+<p>${mensaje}</p>
+<img src="${imagen}"></img>
+<br>`
+        divMensajes.innerHTML+=html;
+        divMensajes.scrollTop=divMensajes.scrollHeight;
+        console.log("recién subió el scroll???")
+    })
+
+    imagen.addEventListener('change',(e)=>{
+        console.log(e.target.value)
+        let file=e.target.files[0];
+        console.log(file);
+        let reader=new FileReader();
+        reader.onload=function(evt){
+            socket.emit('user image',evt.target.result);
+        }
+        reader.readAsDataURL(file);
+    })
+
+*************************************
+*************************************
+
+*******************************
+CSS básico para app chat:
+*******************************
+
+
+#mensajes{
+    margin-top: 15px;
+    width: 90%;
+    height: 350px;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 5px #333 inset;
+    padding: 5px;
+    background-color: cadetblue;
+}
+
+.mensaje{
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: wheat;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+*******************************
+*******************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+console.log(params)
+
+// console.log(urlSearchParams)
+if(params.nombre){
+    let divAviso=document.querySelector('#aviso');
+    divAviso.innerHTML=`Se ha creado correctamente la mascota ${params.nombre}`
+}
+
+const params1 = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  let nombre = params1.nombre; // "some_value"
+  console.log(nombre)
+
+
+
+
