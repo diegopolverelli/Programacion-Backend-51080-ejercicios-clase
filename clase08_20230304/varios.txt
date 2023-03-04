@@ -1,0 +1,47 @@
+// RexExp:
+https://www.youtube.com/watch?v=wfogZfIS03U
+
+// Versión express-handlebars OK, hasta el 28/02:
+"express-handlebars": "^6.0.7",
+
+
+// mail para instalación MongoDB Atlas
+backend51080@gmx.com
+
+
+// Strings de conexión a DB:
+// mongoose.connect('mongodb://127.0.0.1:27017/pruebas_mongo',{
+// mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster0.wpxpupc.mongodb.net/?retryWrites=true&w=majority&dbName=pruebas_mongo2',{
+mongoose.connect('mongodb+srv://diepol:CoderCoderCoder@cluster0.4oxwh3e.mongodb.net/?retryWrites=true&w=majority&dbName=pruebas_Coder',{
+},(err)=>{
+    if(err){
+        console.log(`Error de conexión a la base de datos :( ${err}`)
+    }else{
+        console.log(`Conexión a DB establecida...!!!`)
+    }
+})
+
+
+// Configurar express-handlebars para que tome lectura de Atlas
+app.engine('handlebars', engine({
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true,
+    },
+}));
+
+
+// Conectarse con mongoDB Shell a una base en la nube (de Atlas en este caso)
+mongosh mongodb+srv://coderhouse:coderhouse@cluster0.wpxpupc.mongodb.net/?retryWrites=true
+
+
+
+let heroes=await heroe.obtenerHeroes()
+let heroesOK=[]
+heroes.forEach(h=>{
+    let nombre=h.nombre;
+    let poder=h.poder;
+    let empresa=h.empresa;
+    let _id=h._id
+    heroesOK.push({nombre, poder, empresa, _id})
+})
