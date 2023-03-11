@@ -1,0 +1,95 @@
+// Strings de conexión a DB:
+// mongoose.connect('mongodb://127.0.0.1:27017/pruebas_mongo')
+// 'mongodb+srv://coderhouse:coderhouse@cluster0.v8ivmdl.mongodb.net/?retryWrites=true&w=majority&dbName=pruebas_mongo2'
+// mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster0.wpxpupc.mongodb.net/?retryWrites=true&w=majority&dbName=pruebas_mongo2')
+// mongoose.connect('mongodb+srv://diepol:CoderCoderCoder@cluster0.4oxwh3e.mongodb.net/?retryWrites=true&w=majority&dbName=pruebas_Coder')
+mongoose.connect('mongodb+srv://coderhouse:coderhouse@cluster0.v8ivmdl.mongodb.net/?retryWrites=true&w=majority&dbName=base_clase9',{
+},(err)=>{
+    if(err){
+        console.log(`Error de conexión a la base de datos :( ${err}`)
+    }else{
+        console.log(`Conexión a DB establecida...!!!`)
+    }
+})
+
+
+// especificar colección en el esquema:
+const usuariosEsquema= new Schema({
+    nombre: String,
+    apellido: String,
+    codigo: Number,
+
+},{collection:'usuariosBig'});
+
+
+
+// Configurar express-handlebars para que tome lectura de Atlas
+app.engine('handlebars', engine({
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true,
+    },
+}));
+
+
+// estilos para la paginación
+    <style>
+        h1{
+            color: #222;
+        }
+        ul{
+            margin-bottom: 40px;
+        }
+        li{
+            color:#333
+        }
+        a{
+            padding:15px;
+            border:1px solid #777;
+            border-radius: 5px;
+            background-color: #ccc;
+            color: #333
+        }
+    </style>
+
+
+let alumno=await alumnoModelo.find()
+        .populate({
+            path:'cursando.curso',
+            populate:{
+                path:'titular.profesor'
+            }
+        })
+
+
+alumnoEsq.pre('find',function(){
+    // this.populate('cursando.curso')
+    this.populate({
+        path:'cursando.curso',
+        populate:{
+            path:'titular.profesor'
+        }
+    })
+})
+
+
+// aggregations: concat, add, multiply, etc.
+        let resultado=await estudiantesModelo.aggregate([
+            {
+                $group:{
+                    _id:'$grade',
+                    estudiantes:{
+                        $push:{
+                            nombreCompleto:{$concat:['$first_name',' ','$last_name']},
+                            calificacion: '$grade',
+                            multiplicacion: {$multiply:['$grade',10]},
+                            suma: {$add:['$grade',10]},
+                            resta: {$subtract:['$grade',10]},
+                            division: {$divide:['$grade',10]},
+
+                        }
+                    }
+                }
+            }
+        ])
+

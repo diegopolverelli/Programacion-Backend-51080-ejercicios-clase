@@ -1,0 +1,21 @@
+<h1>Home Page</h1>
+
+<hr>
+
+<ul>
+    {{#each usuarios}}
+        <li>
+            {{this.nombre}} {{this.apellido}} - {{this.origen}} ({{this.codigo}})
+        </li>
+    {{/each}}
+</ul>
+
+<a href="/?pagina=1">Primer página</a>
+{{#if hasPrevPage}}
+    <a href="/?pagina={{prevPage}}">pág.Anterior</a>
+{{/if}}
+{{#if hasNextPage}}
+    <a href="/?pagina={{nextPage}}">pág.Siguiente</a>
+{{/if}}
+<a href="/?pagina={{totalPages}}">Última página</a>
+
