@@ -7,6 +7,7 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 
 import { router as vistasRouter } from './routes/vistas.router.js';
+import { router as sessionsRouter } from './routes/sessions.router.js';
 
 const PORT=3000;
 
@@ -36,6 +37,7 @@ app.use(session({
 
 
 app.use('/',vistasRouter)
+app.use('/api/sessions',sessionsRouter)
 
 const server=app.listen(PORT,()=>{
     console.log(`Server escuchando en puerto ${PORT}`);

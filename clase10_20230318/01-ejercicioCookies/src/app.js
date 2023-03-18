@@ -27,6 +27,20 @@ app.get('/',(req,res)=>{
     res.status(200).render('home');
 })
 
+app.post('/set',(req, res)=>{
+    let {nombre, email}=req.body;
+    if(!nombre || !email) return res.sendStatus(400);
+
+    res.cookie(nombre,email,{maxAge:5000}).redirect('/')
+})
+
+app.get('/get',(req,res)=>{
+    let cookie=req.cookies;
+
+    res.send(cookie);
+
+})
+
 const server=app.listen(PORT,()=>{
     console.log(`Server escuchando en puerto ${PORT}`);
 });
