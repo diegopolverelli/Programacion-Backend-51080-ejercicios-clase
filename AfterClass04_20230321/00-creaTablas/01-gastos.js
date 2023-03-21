@@ -57,6 +57,7 @@ app.get('/',async(req,res)=>{
         }
     ])
 
+    res.setHeader('Content-Type','application/json');
     res.json({resultado})
 
 })
@@ -124,6 +125,7 @@ app.get('/1',async(req,res)=>{
         // }
     ])
 
+    res.setHeader('Content-Type','application/json');
     res.json({resultado})
 
 })
@@ -162,9 +164,8 @@ app.get('/2',async(req,res)=>{
         // }
     ])
 
-    res.json({resultado})
-
-    // console.log(JSON.stringify(resultado,null,5))
+    res.setHeader('Content-Type','application/json');
+    res.json({resultado});
 
 })
 
@@ -216,8 +217,6 @@ app.get('/3',async(req,res)=>{
     ])
 
     res.json({resultado})
-
-    // console.log(JSON.stringify(resultado,null,5))
 
 })
 

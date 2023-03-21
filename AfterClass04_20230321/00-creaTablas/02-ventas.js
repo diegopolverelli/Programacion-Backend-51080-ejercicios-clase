@@ -35,8 +35,6 @@ app.get('/',async(req,res)=>{
     res.setHeader('Content-Type','application/json');
     res.json({resultado})
 
-    // console.log(JSON.stringify(resultado,null,5))
-
 })
 
 

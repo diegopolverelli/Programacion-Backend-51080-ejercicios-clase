@@ -27,7 +27,19 @@ app.get('/',async(req,res)=>{
     let resultado=await estudiantesModelo.aggregate([
         {
             $match:{
-                group:'1A'
+                group:'2B'
+            }
+        },
+        {
+            $group:{
+                _id:'Segundo B',
+                notaPromedio:{$avg:'$grade'},
+                detalle:{
+                    $push:{
+                        nombreCompleto: {$concat:['$first_name',' ','$last_name']},
+                        nota:'$grade'
+                    }
+                }
             }
         }
     ])
@@ -35,7 +47,45 @@ app.get('/',async(req,res)=>{
     res.setHeader('Content-Type','application/json');
     res.json({resultado})
 
-    // console.log(JSON.stringify(resultado,null,5))
+})
+
+
+
+// Cantidad de aprobados (nota superior o igual a 7), nota promedio de los aprobados, 
+// y detalle de alumnos aprobados
+app.get('/1',async(req,res)=>{
+    let resultado=await estudiantesModelo.aggregate([
+        {
+            $match:{
+                grade:{$gte:7}
+            }
+        },
+        {
+            $group: {
+                _id: 'Aprobados',
+                notaPromedio: {$avg:'$grade'},
+                cantidadAprobados: {$count:{}},
+                detalle: {
+                    $push:{
+                        nombreCompleto: {
+                            $concat:['$first_name',' ','$last_name']
+                        },
+                        nota: '$grade'
+                    }
+                }
+            }
+        },
+        // {
+        //     $project:{
+        //         titulo:'Cantidad alumnos con nota mayor o igual a 7',
+        //         cantidad: '$last_name'
+        //     }
+        // }
+    ])
+
+    res.setHeader('Content-Type','application/json');
+    res.json({resultado})
+
 
 })
 

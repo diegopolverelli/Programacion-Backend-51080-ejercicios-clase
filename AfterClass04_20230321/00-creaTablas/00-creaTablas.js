@@ -446,6 +446,69 @@ const estudiantesEsquema = new mongoose.Schema({
 const estudiantesModelo = mongoose.model(estudiantesCol, estudiantesEsquema);
 
 
+let encuesta=[
+    {
+        candidato:'CANDIDATO A',
+        partidoo:'ROJO',
+        presupuesto:3000000,
+        datos:[
+            {
+                rangoEtario:'jovenes',
+                votos:100
+            },
+            {
+                rangoEtario:'mayores',
+                votos:150
+            },
+        ]
+    },
+    {
+        candidato:'CANDIDATO B',
+        partidoo:'VERDE',
+        presupuesto:1500000,
+        datos:[
+            {
+                rangoEtario:'jovenes',
+                votos:200
+            },
+            {
+                rangoEtario:'mayores',
+                votos:30
+            },
+        ]
+    },
+    {
+        candidato:'CANDIDATO C',
+        partidoo:'AZUL',
+        presupuesto:700000,
+        datos:[
+            {
+                rangoEtario:'jovenes',
+                votos:20
+            },
+            {
+                rangoEtario:'mayores',
+                votos:200
+            },
+        ]
+    }
+
+]
+
+const encuestaColeccion='encuesta'
+const encuestaEsquema=new mongoose.Schema({
+    candidato:String,
+    partido:String,
+    presupuesto: Number,
+    datos:[
+        {
+            rangoEtario:String,
+            votos:Number
+        },
+    ]
+},{collection:'encuesta'})
+
+const encuestaModelo=mongoose.model(encuestaColeccion, encuestaEsquema);
 
 const env = async () => {
     try {
@@ -465,6 +528,11 @@ const env = async () => {
         await gastosModelo.deleteMany({});
         await gastosModelo.insertMany(empleadosGastos);
         console.log("Coleccion gastos creada...!!!")
+
+        await encuestaModelo.deleteMany({});
+        await encuestaModelo.insertMany(encuesta);
+        console.log("Coleccion encuesta creada...!!!")
+
         process.exit()
 
 
