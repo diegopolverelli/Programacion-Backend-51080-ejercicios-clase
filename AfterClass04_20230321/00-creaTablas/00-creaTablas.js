@@ -44,51 +44,48 @@ const empleadosGastos=[
         gastos:[
             {
                 periodo:'202203',
-                importe:18000,
                 conceptos:[
                     {
                         codigo:100,
                         descrip:'viaticos',
-                        importe:3000
+                        importe:12000
                     },
                     {
                         codigo:101,
                         descrip:'promocion',
-                        importe:12000
+                        importe:6000
                     },
                     {
                         codigo:200,
                         descrip:'varios',
-                        importe:3000
+                        importe:10000
                     },
 
                 ]
             },
             {
                 periodo:'202202',
-                importe:30000,
                 conceptos:[
                     {
                         codigo:100,
                         descrip:'viaticos',
-                        importe:15000
+                        importe:20000
                     },
                     {
                         codigo:101,
                         descrip:'promocion',
-                        importe:10000
+                        importe:1000
                     },
                     {
                         codigo:200,
                         descrip:'varios',
-                        importe:5000
+                        importe:9000
                     },
 
                 ]
             },
             {
                 periodo:'202201',
-                importe:9000,
                 conceptos:[
                     {
                         codigo:100,
@@ -116,7 +113,6 @@ const empleadosGastos=[
         gastos:[
             {
                 periodo:'202203',
-                importe:28000,
                 conceptos:[
                     {
                         codigo:100,
@@ -138,7 +134,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202202',
-                importe:20000,
                 conceptos:[
                     {
                         codigo:100,
@@ -160,7 +155,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202201',
-                importe:9000,
                 conceptos:[
                     {
                         codigo:100,
@@ -188,7 +182,6 @@ const empleadosGastos=[
         gastos:[
             {
                 periodo:'202203',
-                importe:50000,
                 conceptos:[
                     {
                         codigo:100,
@@ -210,7 +203,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202202',
-                importe:30000,
                 conceptos:[
                     {
                         codigo:100,
@@ -232,7 +224,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202201',
-                importe:20000,
                 conceptos:[
                     {
                         codigo:100,
@@ -260,7 +251,6 @@ const empleadosGastos=[
         gastos:[
             {
                 periodo:'202203',
-                importe:18000,
                 conceptos:[
                     {
                         codigo:100,
@@ -282,7 +272,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202202',
-                importe:30000,
                 conceptos:[
                     {
                         codigo:100,
@@ -304,7 +293,6 @@ const empleadosGastos=[
             },
             {
                 periodo:'202201',
-                importe:9000,
                 conceptos:[
                     {
                         codigo:100,
@@ -326,7 +314,77 @@ const empleadosGastos=[
             },
 
         ]
-    }
+    },
+    {
+        nombre: 'Micaela', apellido:'Quintana', ciudad:'Ciudadela', zona:'Oeste',
+        gastos:[
+            {
+                periodo:'202203',
+                conceptos:[
+                    {
+                        codigo:100,
+                        descrip:'viaticos',
+                        importe:8000
+                    },
+                    {
+                        codigo:101,
+                        descrip:'promocion',
+                        importe:11000
+                    },
+                    {
+                        codigo:200,
+                        descrip:'varios',
+                        importe:9000
+                    },
+
+                ]
+            },
+            {
+                periodo:'202202',
+                conceptos:[
+                    {
+                        codigo:100,
+                        descrip:'viaticos',
+                        importe:10000
+                    },
+                    {
+                        codigo:101,
+                        descrip:'promocion',
+                        importe:10000
+                    },
+                    {
+                        codigo:200,
+                        descrip:'varios',
+                        importe:10000
+                    },
+
+                ]
+            },
+            {
+                periodo:'202201',
+                conceptos:[
+                    {
+                        codigo:100,
+                        descrip:'viaticos',
+                        importe:7000
+                    },
+                    {
+                        codigo:101,
+                        descrip:'promocion',
+                        importe:10000
+                    },
+                    {
+                        codigo:200,
+                        descrip:'varios',
+                        importe:14000
+                    },
+
+                ]
+            },
+
+        ]
+    },
+
 ]
 
 const gastosColeccion='gastos';
@@ -338,7 +396,6 @@ const gastosEsquema=new mongoose.Schema({
     gastos:[
         {
             periodo:String,
-            importe:Number,
             conceptos:[
                 {
                     codigo:Number,
