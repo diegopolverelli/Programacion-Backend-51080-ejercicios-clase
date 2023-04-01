@@ -35,14 +35,14 @@ app.get('/1',[f1,f2,f3,f4])
 
 
 
-// const creaArregloFunciones=(arrayFunciones)=>{
-//     return arrayFunciones.map(funcion=>(...params)=>{
-//         funcion.apply(this, params);
-//     })
-// }
+const creaArregloFunciones=(arrayFunciones)=>{
+    return arrayFunciones.map(funcion=>(...params)=>{
+        funcion.apply(this, params);
+    })
+}
 
-// console.log(arreglo);
-// console.log('Resultado de creaArregloFunciones: ',creaArregloFunciones(arreglo));
+console.log(arreglo);
+console.log('Resultado de creaArregloFunciones: ',creaArregloFunciones(arreglo));
 
-// app.get('/2',creaArregloFunciones(arreglo))
+app.get('/2',creaArregloFunciones(arreglo))
 

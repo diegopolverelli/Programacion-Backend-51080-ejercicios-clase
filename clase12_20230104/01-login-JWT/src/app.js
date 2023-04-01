@@ -4,6 +4,8 @@ import express from 'express';
 import {engine} from 'express-handlebars';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
+import passport from 'passport';
+import { inicializaEstrategias } from './config/passport.config.js';
 // import session from 'express-session';
 // import MongoStore from 'connect-mongo';
 
@@ -26,6 +28,9 @@ app.set('views', path.join(__dirname,'../views'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+
+inicializaEstrategias();
+app.use(passport.initialize());
 
 // app.use(session({
 //     secret:'miPalabraSecreta',

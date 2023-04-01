@@ -3,11 +3,38 @@
 <hr>
 Nombre: {{nombreCompleto}}
 <hr>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, laborum vero? Illo ratione, ipsum doloremque, libero nemo sunt ipsa mollitia fuga in, asperiores laudantium? Nobis earum voluptas laboriosam rerum facere.</p>
+<p id="datos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, laborum vero? Illo ratione, ipsum doloremque, libero nemo sunt ipsa mollitia fuga in, asperiores laudantium? Nobis earum voluptas laboriosam rerum facere.</p>
 
 <br>
+<a href="#" id="btnDatos">Actualizar datos</a>
 <hr>
 <br>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, laborum vero? Illo ratione, ipsum doloremque, libero nemo sunt ipsa mollitia fuga in, asperiores laudantium? Nobis earum voluptas laboriosam rerum facere.</p>
 <br>
 <a href="/api/sessions/logout">Logout</a>
+
+<script>
+    let datos=document.getElementById('datos');
+    let btnDatos=document.getElementById('btnDatos');
+
+    btnDatos.addEventListener('click',(e)=>{
+        e.preventDefault();
+
+        fetch('/datos',{
+            method:'GET',
+            headers: {
+                'Content-Type':'application/json',
+                'Authorization':'Bearer '+localStorage.getItem('CoderToken')
+            }
+        }).then(result=>{
+            return result.text()
+        }).then(data=>{
+            datos.innerHTML=data;
+
+            let cookies=document.cookie;
+            console.log(cookies) 
+        });
+
+
+    })
+</script>

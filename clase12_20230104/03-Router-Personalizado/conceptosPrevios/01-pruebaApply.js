@@ -6,29 +6,29 @@ const prueba={
   },
 }
 
-// prueba.saludo('Necochea','Buenos Aires')
+prueba.saludo('Necochea','Buenos Aires')
 
-// let prueba2={
-//   nombre:'Malena', apellido:'Villalba'
-// }
+let prueba2={
+  nombre:'Malena', apellido:'Villalba'
+}
 
-// prueba.saludo.apply(prueba2, ['Gral. Pico', 'La Pampa'])
+prueba.saludo.apply(prueba2, ['Gral. Pico', 'La Pampa'])
 
 
-// class Persona{
-//   constructor(nombre, apellido){
-//     this.nombre=nombre;
-//     this.apellido=apellido;
-//   }
+class Persona{
+  constructor(nombre, apellido){
+    this.nombre=nombre;
+    this.apellido=apellido;
+  }
   
-//   metodoPrueba=()=>{
-//     prueba.saludo.apply(this,['Pocitos','Mendoza']);
-//   }
+  metodoPrueba=()=>{
+    prueba.saludo.apply(this,['Pocitos','Mendoza']);
+  }
 
-// }
+}
 
-// let persona=new Persona('Roxana','Beltran');
-// persona.metodoPrueba();
+let persona=new Persona('Roxana','Beltran');
+persona.metodoPrueba();
 
 
 

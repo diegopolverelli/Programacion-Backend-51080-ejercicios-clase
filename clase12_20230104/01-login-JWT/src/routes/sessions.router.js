@@ -45,9 +45,20 @@ router.post('/login',async(req,res)=>{
     //     edad:usuario.edad
     // }
 
-    let token=creaJWT(usuario);
+    let usuarioConRol={
+        nombre:usuario.nombre, 
+        apellido:usuario.apellido, 
+        email, 
+        edad:usuario.edad,
+        rol:usuario.nombre=='Diego'?'ADMIN':'USUARIO'
+    }
 
-    res.cookie('codertoken',token,{maxAge:1000*60*120}).redirect('/');
+    let token=creaJWT(usuarioConRol);
+
+    // res.cookie('codertoken',token,{maxAge:1000*60*120}).redirect('/');
+    res.cookie('codertoken',token,{maxAge:1000*60*120, httpOnly:true})
+    .cookie('cookieConHttpOnly',token,{maxAge:1000*60*120, httpOnly:true})
+    .cookie('cookieSinHttpOnly',token,{maxAge:1000*60*120}).send({token});
   
     
 })

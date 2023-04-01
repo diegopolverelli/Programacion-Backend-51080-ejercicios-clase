@@ -10,7 +10,7 @@
 <br><br>
 <p>¿no estas registrado? ingresa <a href="/registro">aquí</a>...!!!</p>
 
-{{!-- <script>
+<script>
     const form  = document.getElementById('loginForm');
 
     form.addEventListener('submit',evt=>{
@@ -34,10 +34,10 @@
         }).then(json=>{
             console.log(json);
             localStorage.setItem('CoderToken',json.token)
-            document.cookie=`codertoken=${json.token};max-age=3600`
+            document.cookie=`codertokenCliente=${json.token};max-age=3600`
             document.location.href=`/?token=${json.token}`;
         });
 
     })
 
-</script> --}}
+</script>
