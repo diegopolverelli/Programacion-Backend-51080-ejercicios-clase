@@ -17,7 +17,7 @@ app.get('/mail',async(req,res)=>{
     res.send(result)
 })
 
-const KEY='jvncumjsxcxemwcl'
+const KEY='your KEY'
 const APLICACION='backendCoder'
 
 // const transport=nodemailer.createTransport({
