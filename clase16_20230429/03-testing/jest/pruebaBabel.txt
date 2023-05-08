@@ -1,0 +1,19 @@
+let a = 0;
+b= a ||= 3
+
+class ClasePrueba{
+	static #datoEstaticoYPrivado=16;
+  	static devuelveDato(){
+      return ClasePrueba.#datoEstaticoYPrivado
+    }
+  	constructor(){
+    	this.variable='hola'
+    }
+  	verDato(){
+    	console.log(ClasePrueba.devuelveDato())
+    }
+}
+
+let objeto1=new ClasePrueba()
+objeto1.verDato()
+console.log(b)
