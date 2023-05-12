@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ordenes:</h1>
+
+    <div id="divOrdenes"></div>
+    <button id="btnOrdenes">Ordenes</button>
+
+
+    <script>
+        let divOrdenes=document.getElementById('divOrdenes')
+        let btnOrdenes=document.getElementById('btnOrdenes')
+
+        btnOrdenes.addEventListener('click',async(e)=>{
+            e.preventDefault()
+
+            let respuesta=await fetch('http://localhost:3000/api/ordenes')
+            let ordenes=await respuesta.json()
+
+            console.log(ordenes)
+
+            ordenes.dato.forEach(o=>{
+                let divOrden=document.createElement('div')
+
+                let pUsuario=document.createElement('p')
+                pUsuario.innerHTML=o.usuario.nombre
+                let pNumero=document.createElement('p')
+                pNumero.innerHTML=o.numeroOrden
+                let pNegocio=document.createElement('p')
+                pNegocio.innerHTML=o.negocio.nombre
+
+                let ulProductos=document.createElement('ul')
+                o.productos.forEach(p=>{
+                    let liProducto=document.createElement('li')
+                    liProducto.innerHTML=p.descrip
+
+                    ulProductos.appendChild(liProducto)
+                })
+
+                divOrden.appendChild(pNumero)
+                divOrden.appendChild(pUsuario)
+                divOrden.appendChild(pNegocio)
+                divOrden.appendChild(ulProductos)
+                divOrden.appendChild(document.createElement('br'))
+                divOrden.appendChild(document.createElement('hr'))
+
+                divOrdenes.appendChild(divOrden)
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>
