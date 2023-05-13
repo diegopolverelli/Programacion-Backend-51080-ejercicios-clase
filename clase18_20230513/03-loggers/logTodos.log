@@ -1,0 +1,43 @@
+{ message: 'Este es un mensaje de error', level: 'error' }
+{ message: 'Este es un mensaje de warning', level: 'warn' }
+{ message: 'Este es un mensaje de información', level: 'info' }
+{ message: 'Este es un mensaje de http', level: 'http' }
+{ message: 'Este es un mensaje de verbose', level: 'verbose' }
+{ message: 'Este es un mensaje de debug', level: 'debug' }
+{ message: 'Este es un mensaje tipo silly', level: 'silly' }
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
+{
+  message: 'Este es un mensaje de error, dentro de un endpoint',
+  level: 'error'
+}
