@@ -1,0 +1,28 @@
+config:
+  target: 'http://127.0.0.1:57444'
+  phases:
+    - duration: 30
+      arrivalRate: 20
+scenarios:
+  - name: "Alta Usuarios"
+    flow:
+      # - log: "Creamos las variables para el usuario de prueba"
+      - get:
+          url: "/api/users/test"
+          capture:
+            - json: "$.first_name"
+              as: "nombre"
+            - json: "$.last_name"
+              as: "apellido"
+            - json: "$.email"
+              as: "email"
+            - json: "$.password"
+              as: "password"
+      # - log: "Registro de usuario"
+      - post:
+          url: "/api/users"
+          json:
+            first_name: "{{nombre}}"
+            last_name: "{{apellido}}"
+            email: "{{email}}"
+            password: "{{password}}"
