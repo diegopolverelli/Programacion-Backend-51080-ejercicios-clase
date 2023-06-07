@@ -1,0 +1,14 @@
+{{>header}}
+
+<h1>Home Page</h1>
+<br>
+<ul>
+    {{#each heroes}}
+        <li>
+            {{this.nombre}}
+        </li>
+    {{/each}}
+</ul>
+
+<br>
+{{>footer}}
