@@ -1,0 +1,81 @@
+paths:
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios de la Base de Datos
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Los usuarios fueron recuperados correctamente desde la DB
+          content:
+            application/json:
+              schema:
+                $ref: '#components/schemas/ResponseGetUser'
+        "500":
+          description: Error interno del servidor
+components:
+  schemas:
+    ResponseGetUser:
+      type: object
+      properties:
+        status:
+          type: string
+          description: success o error
+        payload:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                description: Id autogenerado de MongoAtlas
+              first_name:
+                type: string
+                description: Nombre del usuarios
+              last_name:
+                type: string
+                description: Apellido del usuario
+              email:
+                type: string
+                description: email del usuario
+              dni:
+                type: number
+                description: nro. de documento del usuario
+              birthDate:
+                type: string
+                description: fecha de nacimiento del usuario
+              gender:
+                type: string
+                description: masculino o femenino (M / F)
+              password:
+                type: string
+                description: password hasheada
+              role:
+                type: string
+                description: rol del usuario
+              courses:
+                type: array
+                items:
+                  type: string
+              __v:
+                type: string
+                description: campo que devuelve Mongo Atlas
+      example:
+        status: "success"
+        payload: [
+          {
+          _id: "649242c8fd7dce9f7211ae76",
+          first_name: "Laura",
+          last_name: "Rodriguez",          
+          email: "laura@test.com",
+          dni: 12334567,
+          birthDate: "1979-06-18T03:00:00.000Z",
+          password: "$2b$10$gyRFkkCb4bYY1/BCIY1xueJ8BbayLgDm0rZSSB7dy53vjTIU2XO6y",
+          gender: "F",
+          role: "student",
+          courses: [],
+          __v: 0
+          }
+        ]          
+
+

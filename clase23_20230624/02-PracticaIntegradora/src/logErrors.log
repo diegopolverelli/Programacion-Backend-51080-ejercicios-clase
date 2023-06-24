@@ -1,0 +1,60 @@
+{
+  level: 'error',
+  message: 'Mensaje de prueba: esto es un error',
+  timestamp: '2023-06-24T13:59:22.080Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Inconplete values - {"first_name":"Raúl","last_name":"Villa"}',
+  timestamp: '2023-06-24T14:04:50.907Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Raúl","last_name":"Villa","dni":12345678,"email":"rvilla@test.com","birthDate":"02-04-1990","gerder":"M","password":"123"}',
+  timestamp: '2023-06-24T14:07:35.434Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Inconplete values - {}',
+  timestamp: '2023-06-24T16:04:01.145Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Pedro","last_name":"Rodriguez","email":"prodriguez@test.com","password":"123","gender":"M","dni":12345678,"birthDate":"03-03-2005"}',
+  timestamp: '2023-06-24T16:10:11.663Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Pedro","last_name":"Rodriguez","email":"prodriguez@test.com","password":"123","gender":"M","dni":12345678,"birthDate":"03-03-2005"}',
+  timestamp: '2023-06-24T16:10:47.931Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Pedro","last_name":"Rodriguez","email":"test9999@test.com","password":"123","gender":"M","dni":12345678,"birthDate":"03-03-2005"}',
+  timestamp: '2023-06-24T16:11:01.832Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Inconplete values - {"first_name":"Pedro","last_name":"Rodriguez"}',
+  timestamp: '2023-06-24T16:19:36.011Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Inconplete values - {"first_name":"Pedro","last_name":"Rodriguez"}',
+  timestamp: '2023-06-24T16:20:05.054Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Pedro","last_name":"Rodriguez","email":"prodriguez@test.com","password":"123","gender":"M","dni":12345678,"birthDate":"03-03-2005"}',
+  timestamp: '2023-06-24T16:21:31.693Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Inconplete values - {"first_name":"Pedro","last_name":"Rodriguez"}',
+  timestamp: '2023-06-24T16:21:50.015Z'
+}
+{
+  level: 'error',
+  message: 'POST - / - diego - Email existe en BD - {"first_name":"Pedro","last_name":"Rodriguez","email":"test9999@test.com","password":"123","gender":"M","dni":12345678,"birthDate":"03-03-2005"}',
+  timestamp: '2023-06-24T16:21:50.652Z'
+}
