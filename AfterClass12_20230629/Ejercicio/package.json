@@ -1,0 +1,13 @@
+{
+  "name": "Ejercicio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "mysql2": "^3.4.3",
+    "sequelize": "^6.32.1"
+  },
+  "type": "module"
+}
